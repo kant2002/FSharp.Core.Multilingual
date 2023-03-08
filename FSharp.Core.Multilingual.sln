@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Core.Ukrainian", "FSharp.Core.Ukrainian\FSharp.Core.Ukrainian.fsproj", "{A7EE5ABA-3944-420B-90DB-309E51CFDCC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5A94C71-69A0-4F29-A2FC-A0E630366523}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7EE5ABA-3944-420B-90DB-309E51CFDCC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EE5ABA-3944-420B-90DB-309E51CFDCC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EE5ABA-3944-420B-90DB-309E51CFDCC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EE5ABA-3944-420B-90DB-309E51CFDCC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3763D2F4-D754-4CFB-8FD9-E3E81977028C}
+	EndGlobalSection
+EndGlobal
