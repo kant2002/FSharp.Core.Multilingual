@@ -3,10 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <VersionPrefix>0.0.1</VersionPrefix>
+    <VersionPrefix>0.0.2</VersionPrefix>
+    <Description>Бібліотека для F# та Ф# із українськими ключовими словами.</Description>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="6.0.6" />
+  </ItemGroup>
+
+  <ItemGroup> 
     <Compile Include="Українська.fs" />
   </ItemGroup>
 
