@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <VersionPrefix>0.0.2</VersionPrefix>
+    <VersionPrefix>0.0.3</VersionPrefix>
     <Description>Бібліотека для F# та Ф# із українськими ключовими словами.</Description>
   </PropertyGroup>
 
@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup> 
-    <Compile Include="Українська.fs" />
+    <Compile Include="Українська.fs" /> 
+    <Compile Include="СИ.fs" />
   </ItemGroup>
 
 </Project>

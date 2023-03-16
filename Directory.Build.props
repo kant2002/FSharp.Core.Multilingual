@@ -7,6 +7,8 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <VersionSuffix Condition="$(ProduceRelease) != true">dev</VersionSuffix>
+    <VersionSuffix Condition="$(ProduceRelease) == true"></VersionSuffix>
   </PropertyGroup>
 
   <ItemGroup>

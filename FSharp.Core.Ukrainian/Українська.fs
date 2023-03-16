@@ -59,6 +59,18 @@ module ДодатковіОпераціїВерхньогоРівня =
   нехай inline ссил значення = ref значення
   тип ссил<'Т> = ref<'Т>
 
+  ///<summary>Печатає до <c>stdout</c> використовуючи заданий формат, та додає символ нового рядка.</summary>
+  ///<param name="format">Форматувальник.</param>
+  ///<returns>Форматований результат.</returns>
+  ///<example>Дивиться <c>Printf.printfn</c> (посилання: <see cref="M:Microsoft.FSharp.Core.PrintfModule.PrintFormatLine``1" />) за прикладами.</example>
+  нехай inline напечататифн формат = printfn формат
+
+  ///<summary>Печатає до <c>stdout</c> використовуючи заданий формат.</summary>
+  ///<param name="format">Форматувальник.</param>
+  ///<returns>Форматований результат.</returns>
+  ///<example>Дивиться <c>Printf.printf</c> (посилання: <see cref="M:Microsoft.FSharp.Core.PrintfModule.PrintFormat``1" />) за прикладами.</example>
+  нехай inline напечататиф формат = printf формат
+
   тип Асинх = 
       static member ДочекатисяЗадачу(задача) = Async.AwaitTask задача
       static member Запустити(обчислення: Async<unit>, ?маркерСкасування: System.Threading.CancellationToken) = 
@@ -70,7 +82,12 @@ module ДодатковіОпераціїВерхньогоРівня =
 ///<summary>Contains operations for working with values of type <see cref="T:Microsoft.FSharp.Collections.seq`1" />.</summary>
 [<RequireQualifiedAccess; CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
 module Посл =
+    нехай ініц = Seq.init
     нехай уникальні = Seq.distinct
+    нехай фільтр = Seq.filter
+    нехай inline сумаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: seq<'T>) : ^U = Seq.sumBy projection source
+    нехай урізати = Seq.truncate
+    нехай доСписка = Seq.toList
     ;
 ///<summary>Contains operations for working with values of type <see cref="T:Microsoft.FSharp.Collections.list`1" />.</summary>
 ///<namespacedoc><summary>Operations for collections such as lists, arrays, sets, maps and sequences. See also 
@@ -78,6 +95,30 @@ module Посл =
 /// </summary></namespacedoc>
 [<RequireQualifiedAccess; CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
 module Список =
+    ///<summary>Returns a list that contains no duplicate entries according to generic hash and
+    /// equality comparisons on the entries.
+    /// If an element occurs multiple times in the list then the later occurrences are discarded.</summary>
+    ///<param name="list">The input list.</param>
+    ///<returns>The result list.</returns>
+    ///<example id="distinct-1"><code lang="fsharp">
+    /// let input = [6;1;2;3;1;4;5;5]
+    ///
+    /// input |&gt; List.distinct
+    /// </code>
+    /// Evaluates to <c>[6; 1; 2; 3; 4; 5]</c>.
+    /// </example>
     нехай уникальні = List.distinct
     нехай ізПосл = List.ofSeq
     нехай обр = List.rev
+    //нехай фільтр = List.map
+    нехай фільтр = List.filter
+    нехай inline сумаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: list<'T>) : ^U = List.sumBy projection source
+    нехай урізати = List.truncate
+
+[<RequireQualifiedAccess; CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
+module Масив =
+    нехай ініц = Array.init
+    нехай фільтр = Array.filter
+    нехай inline сумаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: array<'T>) : ^U = Array.sumBy projection source
+    нехай урізати = Array.truncate
+    нехай доСписка = Array.toList
