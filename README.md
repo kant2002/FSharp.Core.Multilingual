@@ -9,3 +9,9 @@ List of languages
 # Related projects
 - [Фшарп](https://github.com/kant2002/fsharp)
 - [Ядро Фшарп для .NET Polyglot Notebooks](https://github.com/kant2002/fsharp-kernel-ua)
+
+For release
+
+```
+dotnet pack -c Release /p:ProduceRelease=true
+```
