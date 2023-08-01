@@ -119,6 +119,6 @@ module Список =
 module Масив =
     нехай ініц = Array.init
     нехай фільтр = Array.filter
-    нехай inline сумаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: array<'T>) : ^U = Array.sumBy projection source
+    нехай inline сумаПо projection source = Array.sumBy projection source
     нехай урізати = Array.truncate
     нехай доСписка = Array.toList
