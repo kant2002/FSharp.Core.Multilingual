@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <VersionPrefix>0.0.2</VersionPrefix>
+    <Description>Библиотека для F# и Ф# с русскими ключевыми словами.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Русский.fs" />
+  </ItemGroup>
+
+</Project>
