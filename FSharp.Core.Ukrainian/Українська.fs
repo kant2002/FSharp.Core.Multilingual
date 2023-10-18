@@ -11,6 +11,11 @@ module Коллекції =
     тип МасивЗмінногоРозміру<'ТЗначення> = ResizeArray<'ТЗначення>
 
 [<AutoOpen>]
+module Операції =
+  нехай inline провалитисяз повідомлення = failwith повідомлення
+  нехай inline провалитисязф повідомлення = failwithf повідомлення
+
+[<AutoOpen>]
 module ДодатковіОпераціїВерхньогоРівня =
     
   ///<summary>Builds an asynchronous workflow using computation expression syntax.</summary>
@@ -25,6 +30,7 @@ module ДодатковіОпераціїВерхньогоРівня =
   ///
   /// sleepExample() |&gt; Async.RunSynchronously
   /// </code></example>
+  [<CompiledName ("DefaultAsyncBuilder")>]
   нехай асинх = async
 
   ///<summary>Builds a read-only lookup table from a sequence of key/value pairs. The key objects are indexed using generic hashing and equality.</summary>
@@ -77,6 +83,12 @@ module ДодатковіОпераціїВерхньогоРівня =
         let маркерСкасування =
             defaultArg маркерСкасування Async.DefaultCancellationToken
         Async.Start( обчислення, маркерСкасування)
+      static member ВиконатиСинхронно(обчислення: Async<unit>, ?таймаут: int, ?маркерСкасування: System.Threading.CancellationToken) = 
+        let маркерСкасування =
+            defaultArg маркерСкасування Async.DefaultCancellationToken
+        let таймаут =
+            defaultArg таймаут System.Threading.Timeout.Infinite
+        Async.RunSynchronously( обчислення, таймаут, маркерСкасування)
 
 
 ///<summary>Contains operations for working with values of type <see cref="T:Microsoft.FSharp.Collections.seq`1" />.</summary>
@@ -118,6 +130,8 @@ module Список =
 [<RequireQualifiedAccess; CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
 module Масив =
     нехай ініц = Array.init
+    нехай ітер = Array.iter
+    нехай ітер2 = Array.iter2
     нехай фільтр = Array.filter
     нехай inline сумаПо projection source = Array.sumBy projection source
     нехай урізати = Array.truncate
