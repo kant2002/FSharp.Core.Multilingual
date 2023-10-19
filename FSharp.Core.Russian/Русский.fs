@@ -89,6 +89,7 @@ module Посл =
     let кСписку = Seq.toList
     let применить = Seq.map
     let итер = Seq.iter
+    let существует = Seq.exists
 
 ///<summary>Contains operations for working with values of type <see cref="T:Microsoft.FSharp.Collections.list`1" />.</summary>
 ///<namespacedoc><summary>Operations for collections such as lists, arrays, sets, maps and sequences. See also 
@@ -116,6 +117,7 @@ module Список =
     let inline суммаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: list<'T>) : ^U = List.sumBy projection source
     let обрезать = List.truncate
     let итер = List.iter
+    let существует = List.exists
 
 [<RequireQualifiedAccess; CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
 module Массив =
@@ -126,3 +128,4 @@ module Массив =
     let обрезать = Array.truncate
     let кСписку = Array.toList
     let итер = Array.iter
+    let существует = Array.exists
