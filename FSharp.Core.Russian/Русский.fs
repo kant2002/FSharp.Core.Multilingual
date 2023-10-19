@@ -87,7 +87,8 @@ module Посл =
     let inline суммаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: seq<'T>) : ^U = Seq.sumBy projection source
     let обрезать = Seq.truncate
     let кСписку = Seq.toList
-    ;
+    let применить = Seq.map
+
 ///<summary>Contains operations for working with values of type <see cref="T:Microsoft.FSharp.Collections.list`1" />.</summary>
 ///<namespacedoc><summary>Operations for collections such as lists, arrays, sets, maps and sequences. See also 
 ///    <a href="https://docs.microsoft.com/dotnet/fsharp/language-reference/fsharp-collection-types">F# Collection Types</a> in the F# Language Guide.
@@ -109,7 +110,7 @@ module Список =
     let уникальные = List.distinct
     let изПосл = List.ofSeq
     let обр = List.rev
-    //let фільтр = List.map
+    let применить = List.map
     let фильтр = List.filter
     let inline суммаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: list<'T>) : ^U = List.sumBy projection source
     let обрезать = List.truncate
@@ -118,6 +119,7 @@ module Список =
 module Массив =
     let иниц = Array.init
     let фильтр = Array.filter
+    let применить = Array.map
     let inline суммаПо projection source = Array.sumBy projection source
     let обрезать = Array.truncate
     let кСписку = Array.toList
