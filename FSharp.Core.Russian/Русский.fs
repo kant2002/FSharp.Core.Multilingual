@@ -88,6 +88,7 @@ module Посл =
     let обрезать = Seq.truncate
     let кСписку = Seq.toList
     let применить = Seq.map
+    let итер = Seq.iter
 
 ///<summary>Contains operations for working with values of type <see cref="T:Microsoft.FSharp.Collections.list`1" />.</summary>
 ///<namespacedoc><summary>Operations for collections such as lists, arrays, sets, maps and sequences. See also 
@@ -114,6 +115,7 @@ module Список =
     let фильтр = List.filter
     let inline суммаПо ([<InlineIfLambda>] projection: 'T -> ^U) (source: list<'T>) : ^U = List.sumBy projection source
     let обрезать = List.truncate
+    let итер = List.iter
 
 [<RequireQualifiedAccess; CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
 module Массив =
@@ -123,3 +125,4 @@ module Массив =
     let inline суммаПо projection source = Array.sumBy projection source
     let обрезать = Array.truncate
     let кСписку = Array.toList
+    let итер = Array.iter
